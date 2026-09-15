@@ -1,0 +1,19 @@
+---
+title: "Joseph Lawhorn"
+---
+
+## AD688 - Big Data and Cloud Analytics for Business
+
+Welcome to my course website for AD688 at Boston University.
+
+This website was created using Quarto and deployed through GitHub Pages from my AWS EC2 environment.
+
+## Python Example
+
+```{python}
+numbers = [10, 20, 30, 40, 50]
+average = sum(numbers) / len(numbers)
+
+print("Numbers:", numbers)
+print("Average:", average)
+```

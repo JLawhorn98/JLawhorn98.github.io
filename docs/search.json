@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Joseph Lawhorn",
+    "section": "",
+    "text": "Welcome to my course website for AD688 at Boston University.\nThis website was created using Quarto and deployed through GitHub Pages from my AWS EC2 environment."
+  },
+  {
+    "objectID": "index.html#ad688---big-data-and-cloud-analytics-for-business",
+    "href": "index.html#ad688---big-data-and-cloud-analytics-for-business",
+    "title": "Joseph Lawhorn",
+    "section": "",
+    "text": "Welcome to my course website for AD688 at Boston University.\nThis website was created using Quarto and deployed through GitHub Pages from my AWS EC2 environment."
+  },
+  {
+    "objectID": "index.html#python-example",
+    "href": "index.html#python-example",
+    "title": "Joseph Lawhorn",
+    "section": "Python Example",
+    "text": "Python Example\n\nnumbers = [10, 20, 30, 40, 50]\naverage = sum(numbers) / len(numbers)\n\nprint(\"Numbers:\", numbers)\nprint(\"Average:\", average)\n\nNumbers: [10, 20, 30, 40, 50]\nAverage: 30.0"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  }
+]
