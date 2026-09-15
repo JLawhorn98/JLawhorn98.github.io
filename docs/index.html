@@ -156,6 +156,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#ad688---big-data-and-cloud-analytics-for-business" id="toc-ad688---big-data-and-cloud-analytics-for-business" class="nav-link active" data-scroll-target="#ad688---big-data-and-cloud-analytics-for-business">AD688 - Big Data and Cloud Analytics for Business</a></li>
   <li><a href="#python-example" id="toc-python-example" class="nav-link" data-scroll-target="#python-example">Python Example</a></li>
+  <li><a href="#pyspark-example" id="toc-pyspark-example" class="nav-link" data-scroll-target="#pyspark-example">PySpark Example</a></li>
   </ul>
 </nav>
     </div>
@@ -188,7 +189,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="python-example" class="level2">
 <h2 class="anchored" data-anchor-id="python-example">Python Example</h2>
-<div id="2637c42a" class="cell" data-execution_count="1">
+<div id="7ebe012f" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>]</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>average <span class="op">=</span> <span class="bu">sum</span>(numbers) <span class="op">/</span> <span class="bu">len</span>(numbers)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -197,6 +198,42 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-stdout">
 <pre><code>Numbers: [10, 20, 30, 40, 50]
 Average: 30.0</code></pre>
+</div>
+</div>
+</section>
+<section id="pyspark-example" class="level2">
+<h2 class="anchored" data-anchor-id="pyspark-example">PySpark Example</h2>
+<div id="6ec9cd35" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyspark.sql <span class="im">import</span> SparkSession</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>spark <span class="op">=</span> SparkSession.builder.master(<span class="st">"local[*]"</span>).appName(<span class="st">"AD688"</span>).getOrCreate()</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> [(<span class="st">"Python"</span>, <span class="dv">10</span>), (<span class="st">"PySpark"</span>, <span class="dv">20</span>), (<span class="st">"AWS"</span>, <span class="dv">30</span>)]</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> spark.createDataFrame(data, [<span class="st">"Technology"</span>, <span class="st">"Value"</span>])</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>df.show()</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>spark.stop()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>WARNING: Using incubator modules: jdk.incubator.vector
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+26/09/15 21:47:51 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+
+[Stage 0:&gt;                                                          (0 + 1) / 1]
+
+                                                                                </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>+----------+-----+
+|Technology|Value|
++----------+-----+
+|    Python|   10|
+|   PySpark|   20|
+|       AWS|   30|
++----------+-----+
+</code></pre>
 </div>
 </div>
 

@@ -17,3 +17,18 @@ average = sum(numbers) / len(numbers)
 print("Numbers:", numbers)
 print("Average:", average)
 ```
+
+## PySpark Example
+
+```{python}
+from pyspark.sql import SparkSession
+
+spark = SparkSession.builder.master("local[*]").appName("AD688").getOrCreate()
+
+data = [("Python", 10), ("PySpark", 20), ("AWS", 30)]
+df = spark.createDataFrame(data, ["Technology", "Value"])
+
+df.show()
+
+spark.stop()
+```

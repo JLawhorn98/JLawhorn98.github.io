@@ -21,6 +21,13 @@
     "text": "Python Example\n\nnumbers = [10, 20, 30, 40, 50]\naverage = sum(numbers) / len(numbers)\n\nprint(\"Numbers:\", numbers)\nprint(\"Average:\", average)\n\nNumbers: [10, 20, 30, 40, 50]\nAverage: 30.0"
   },
   {
+    "objectID": "index.html#pyspark-example",
+    "href": "index.html#pyspark-example",
+    "title": "Joseph Lawhorn",
+    "section": "PySpark Example",
+    "text": "PySpark Example\n\nfrom pyspark.sql import SparkSession\n\nspark = SparkSession.builder.master(\"local[*]\").appName(\"AD688\").getOrCreate()\n\ndata = [(\"Python\", 10), (\"PySpark\", 20), (\"AWS\", 30)]\ndf = spark.createDataFrame(data, [\"Technology\", \"Value\"])\n\ndf.show()\n\nspark.stop()\n\nWARNING: Using incubator modules: jdk.incubator.vector\nUsing Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties\nSetting default log level to \"WARN\".\nTo adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).\n26/09/15 21:47:51 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable\n\n[Stage 0:&gt;                                                          (0 + 1) / 1]\n\n                                                                                \n\n\n+----------+-----+\n|Technology|Value|\n+----------+-----+\n|    Python|   10|\n|   PySpark|   20|\n|       AWS|   30|\n+----------+-----+"
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
